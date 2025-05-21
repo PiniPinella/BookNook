@@ -45,41 +45,9 @@ cursor.execute('''
     )
 ''')
 
-
-with open('books.csv', 'r') as f:
-     reader = csv.reader(f)
-     for row in reader:
-         cursor.execute("""
- INSERT INTO book (id, title, author, release_year, editor, pages_count, price, in_stock)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-        """, (
-            row['ID'],          # CSV-Spalte 'ID' → DB-Spalte 'id'
-            row['Title'],       # CSV-Spalte 'Titel' → DB 'titel'
-            row['Author'],
-            row['Release Year'],
-            row['Editor'],
-            row['Page Count'],
-            row['Price'],
-            True if row['In Stock'].lower() == 'true' else False  # String zu Boolean
-        ))
-        
 conn.commit()
 conn.close()
 print("Datenbank und Tabellen wurden erstellt!")
 
-########### Datenbank füllen
 
-
-
-
-
-
-
-
-# ToDos für später
-# Für jedes Produkt (also Buch, EBook, Film) sollen folgende Aufrufe möglich sein:
-# - Alle Einträge aufrufen
-# - Eintrag aufrufen (bspw. Anhand einer ID)
-# - Eintrag hinzufügen
-# - Eintrag verändern
-# - Eintrag entfernen
+### csv hab ich über dbeaver importiert :)
