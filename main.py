@@ -3,6 +3,9 @@ import sqlite3
 from pydantic import BaseModel
 from typing import List
 
+######## bash
+# uvicorn main:app --reload
+
 # Initialisiere die FastAPI-App
 app = FastAPI()
 
@@ -77,7 +80,7 @@ def get_all_books():
         conn.close()  # Wird NACH return ausgeführt
 
 @app.get("/books/{id}", response_model=Book)
-def get_book(book_id: int):
+def get_book(id: int):
     """Gibt ein spezifisches Buch anhand der ID zurück"""
     conn = get_db_connection()
     try:
