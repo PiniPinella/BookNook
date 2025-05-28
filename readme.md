@@ -31,40 +31,14 @@ This is a RESTful API for managing products in a bookstore (books, e-books, movi
 ## 🚀 Terminal-Installation
 
 1. Clone the repository:
+    ´´bash 
     git clone https://github.com/yourusername/bookstore-api.git
     cd bookstore-api
 
 2. Install required libraries
+    ´´bash
     pip install -r requirements.txt
 
 3. Run the API
+    ´´bash
     uvicorn main:app --reload
-
-
-## 📊 Database Structure
-
-
-erDiagram
-    BUCH {
-        int id PK
-        string titel
-        string autor
-        int erscheinungsjahr
-        float preis
-        bool auf_lager
-    }
-    
-    CAFE_BESTELLUNG {
-        int id PK
-        string produkttyp
-        datetime bestelldatum
-        float preis
-    }
-    
-    AENDERUNGSLOG {
-        datetime timestamp
-        string operation
-        string tabelle
-        int eintrag_id
-        string details
-    }
