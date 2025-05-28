@@ -15,6 +15,7 @@ from coffee_CRUD.apple_spritzer_functions import apple_spritzer_router
 from coffee_CRUD.latte_functions import latte_router
 from coffee_CRUD.lemonade_functions import lemonade_router
 from coffee_CRUD.stock_functions import stock_router
+from statistic_CRUD.statistic_functions import statistic_router
 
 #### fetching own functions and classes
 from helper_functions import get_book_connection, get_coffee_connection#, row_to_book
@@ -39,6 +40,7 @@ app.include_router(apple_spritzer_router)
 app.include_router(latte_router)
 app.include_router(lemonade_router)
 app.include_router(stock_router)
+app.include_router(statistic_router)
 
 # app.add_middleware(
 #     CORSMiddleware,

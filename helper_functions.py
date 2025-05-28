@@ -10,7 +10,7 @@ from datetime import datetime
 def get_book_connection():
     """Creates and returns book db connection mit dict rows"""
     conn = sqlite3.connect("database/books.db")
-    conn.row_factory = sqlite3.Row  # Ermöglicht zugriff via Spaltennamen (row["title"])
+    conn.row_factory = sqlite3.Row  # enables access via column name (row["title"])
     return conn
 
 def get_coffee_connection():
@@ -85,8 +85,6 @@ def row_to_lemonade(row):
         price=row[1],
         order_date=datetime.strptime(row[2], "%Y-%m-%d %H:%M:%S").date()
     )
-
-### stock fehlt noch
 
 def row_to_stock(row):
     """Converts db row into stock object"""
