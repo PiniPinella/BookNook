@@ -1,8 +1,9 @@
 # 📚 BookNook - A Bookstore & Café API
-*This was intended as a group project for 3-5 people (DataCraft School), 
-but I had some free time and didn't understand much about APIs, so I used this as a learning-by-doing experience.*
+*Originally designed as a group project for 3–5 participants at DataCraft School,
+I decided to tackle it solo during some free time. I didn’t know much about APIs back then,
+so I turned it into a hands-on learning experience.*
  
-A RESTful API for managing products in a bookstore (books, e-books, movies) and café orders, built with FastAPI and SQLite. This was supposed to be a german data school project for up to 5 people. But I had some free time and didn't understand much about APIs, so I used this as a learning-by-doing-chance.
+This is a RESTful API for managing products in a bookstore (books, e-books, movies) and café orders, built with FastAPI and SQLite.
 
 ## 📖 Features
 
@@ -16,7 +17,7 @@ A RESTful API for managing products in a bookstore (books, e-books, movies) and 
   
 - **Additional Features**:
   - Comprehensive change logging
-  - Real-time inventory statistics
+  - Real-time inventory statistics for Books and Movies
   - Automatic API documentation
 
 ## 🛠️ Technologies
@@ -27,9 +28,43 @@ A RESTful API for managing products in a bookstore (books, e-books, movies) and 
 - Pydantic (data validation)
 - Uvicorn (ASGI server)
 
-## 🚀 Installation
+## 🚀 Terminal-Installation
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/bookstore-api.git
-   cd bookstore-api
+    git clone https://github.com/yourusername/bookstore-api.git
+    cd bookstore-api
+
+2. Install required libraries
+    pip install -r requirements.txt
+
+3. Run the API
+    uvicorn main:app --reload
+
+
+## 📊 Database Structure
+
+
+erDiagram
+    BUCH {
+        int id PK
+        string titel
+        string autor
+        int erscheinungsjahr
+        float preis
+        bool auf_lager
+    }
+    
+    CAFE_BESTELLUNG {
+        int id PK
+        string produkttyp
+        datetime bestelldatum
+        float preis
+    }
+    
+    AENDERUNGSLOG {
+        datetime timestamp
+        string operation
+        string tabelle
+        int eintrag_id
+        string details
+    }
