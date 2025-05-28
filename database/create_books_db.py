@@ -50,4 +50,4 @@ conn.close()
 print("Datenbank und Tabellen wurden erstellt!")
 
 
-### csv hab ich über dbeaver importiert :)
+### csv import via dbeaver
