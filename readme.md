@@ -31,14 +31,14 @@ This is a RESTful API for managing products in a bookstore (books, e-books, movi
 ## 🚀 Terminal-Installation
 
 1. Clone the repository:
-    ´´bash 
+    ```bash 
     git clone https://github.com/yourusername/bookstore-api.git
     cd bookstore-api
 
 2. Install required libraries
-    ´´bash
+    ```bash
     pip install -r requirements.txt
 
 3. Run the API
-    ´´bash
+    ```bash
     uvicorn main:app --reload
