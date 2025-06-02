@@ -5,7 +5,7 @@
 import sqlite3
 from classes import Book, Ebook, Movie, Americano, Apple_Spritzer, Latte, Lemonade, Stock
 
-from datetime import datetime
+from datetime import date
 
 def get_book_connection():
     """Creates and returns book db connection mit dict rows"""
@@ -55,35 +55,47 @@ def row_to_movie(row) -> Movie:
     )
 
 def row_to_americano(row):
-    """Converts database row (with datetime) to Pydantic model (date only)"""
+    """Converts database row to Pydantic model and returns the date"""
+    date_str = row[2]
+    date_only = date_str[:10] #extracts the first 10 letters -> date without time
+
     return Americano(
         id=row[0],
         price=row[1],
-        order_date=datetime.strptime(row[2], "%Y-%m-%d %H:%M:%S").date()
+        order_date= date.fromisoformat(date_only)
     )
 
 def row_to_apple_spritzer(row):
-    """Converts database row (with datetime) to Pydantic model (date only)"""
+    """Converts database row to Pydantic model and returns the date"""
+    date_str = row[2]
+    date_only = date_str[:10]
+
     return Apple_Spritzer(
         id=row[0],
         price=row[1],
-        order_date=datetime.strptime(row[2], "%Y-%m-%d %H:%M:%S").date()
+        order_date= date.fromisoformat(date_only)
     )
 
 def row_to_latte(row):
-    """Converts database row (with datetime) to Pydantic model (date only)"""
+    """Converts database row to Pydantic model and returns the date"""
+    date_str = row[2]
+    date_only = date_str[:10]
+
     return Latte(
         id=row[0],
         price=row[1],
-        order_date=datetime.strptime(row[2], "%Y-%m-%d %H:%M:%S").date()
+        order_date= date.fromisoformat(date_only)
     )
 
 def row_to_lemonade(row):
-    """Converts database row (with datetime) to Pydantic model (date only)"""
+    """Converts database row to Pydantic model and returns the date"""
+    date_str = row[2]
+    date_only = date_str[:10]
+
     return Lemonade(
         id=row[0],
         price=row[1],
-        order_date=datetime.strptime(row[2], "%Y-%m-%d %H:%M:%S").date()
+        order_date= date.fromisoformat(date_only)
     )
 
 def row_to_stock(row):

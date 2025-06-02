@@ -42,14 +42,6 @@ app.include_router(lemonade_router)
 app.include_router(stock_router)
 app.include_router(statistic_router)
 
-# app.add_middleware(
-#     CORSMiddleware,
-#     allow_origins=["*"],  # Nur für Entwicklung! In Produktion explizite URLs angeben.
-#     allow_methods=["*"],  # Erlaubt alle HTTP-Methoden (GET, POST, etc.)
-#     allow_headers=["*"],
-# )
-
-
 ######## bash
 # uvicorn main:app --reload
 # http://localhost:8000/docs
